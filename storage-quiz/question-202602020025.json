@@ -1,0 +1,396 @@
+{
+  "id": "question-202602020025",
+  "timestamp": 1769966734077,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the output of the following code snippet?",
+      "code": "byte b = 10;\nb = (byte) (b + 10);\nSystem.out.println(b);",
+      "options": [
+        "20",
+        "Compilation error",
+        "Runtime error",
+        "1010"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Adding two variables or a variable and a literal results in an int. Casting back to byte is necessary. Here it is done correctly, so it prints 20."
+    },
+    {
+      "id": 2,
+      "question": "What does this code print?",
+      "code": "Integer i1 = 127;\nInteger i2 = 127;\nInteger i3 = 128;\nInteger i4 = 128;\nSystem.out.println((i1 == i2) + \" \" + (i3 == i4));",
+      "options": [
+        "true true",
+        "false false",
+        "true false",
+        "false true"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Integer values between -128 and 127 are cached. i1 and i2 point to the same object, while i3 and i4 are new objects."
+    },
+    {
+      "id": 3,
+      "question": "What is the result of the following String operation?",
+      "code": "String s1 = \"Java\";\nString s2 = \"Ja\" + \"va\";\nString s3 = new String(\"Java\");\nSystem.out.println((s1 == s2) + \" \" + (s1 == s3.intern()));",
+      "options": [
+        "true true",
+        "true false",
+        "false true",
+        "false false"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Compile-time constant expressions are interned. intern() returns the reference from the pool, so both comparisons are true."
+    },
+    {
+      "id": 4,
+      "question": "What is the value of 'result'?",
+      "code": "double result = Math.floor(-2.1);",
+      "options": [
+        "-2.0",
+        "-3.0",
+        "2.0",
+        "3.0"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Math.floor returns the largest integer less than or equal to the argument. For -2.1, -3.0 is the smaller integer."
+    },
+    {
+      "id": 5,
+      "question": "Which of the following is a valid Text Block in Java?",
+      "code": "String text = \"\"\"\n    Line 1\n    Line 2\"\"\";",
+      "options": [
+        "String text = \"\"\"Line 1 Line 2\"\"\";",
+        "String text = \"\"\"\nLine 1\n\"\"\";",
+        "String text = \"\"\"\"\"Line 1\"\"\"\"\";",
+        "None of the above"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A text block must start with a new line after the opening triple quotes."
+    },
+    {
+      "id": 6,
+      "question": "What is the output of this StringBuilder operation?",
+      "code": "StringBuilder sb = new StringBuilder(\"0123456\");\nsb.delete(2, 4);\nsb.insert(2, \"XYZ\");\nSystem.out.println(sb);",
+      "options": [
+        "01XYZ456",
+        "012XYZ56",
+        "01XYZ23456",
+        "01XYZ56"
+      ],
+      "correctAnswer": 0,
+      "explanation": "delete(2, 4) removes characters at index 2 and 3 ('23'). insert(2, 'XYZ') places the string starting at index 2."
+    },
+    {
+      "id": 7,
+      "question": "What happens when you run this code?",
+      "code": "Double d = null;\ndouble primitiveD = d;",
+      "options": [
+        "primitiveD becomes 0.0",
+        "Compilation error",
+        "NullPointerException at runtime",
+        "primitiveD becomes NaN"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Unboxing a null wrapper object results in a NullPointerException."
+    },
+    {
+      "id": 8,
+      "question": "Which of these is a valid numeric literal?",
+      "code": "",
+      "options": [
+        "int a = _100;",
+        "long b = 100_L;",
+        "float c = 100_.0f;",
+        "double d = 1_00.0;"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Underscores cannot be at the start, end, or adjacent to a decimal point or suffix (L/f)."
+    },
+    {
+      "id": 9,
+      "question": "What is the return type of Math.round(2.5)?",
+      "code": "",
+      "options": [
+        "int",
+        "long",
+        "double",
+        "float"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Math.round(double) returns a long. Math.round(float) returns an int."
+    },
+    {
+      "id": 10,
+      "question": "What will the following code output?",
+      "code": "String s = \"12345\";\nSystem.out.println(s.substring(2, 4));",
+      "options": [
+        "23",
+        "34",
+        "234",
+        "345"
+      ],
+      "correctAnswer": 1,
+      "explanation": "substring(start, end) is inclusive of the start index and exclusive of the end index. Index 2 is '3', index 3 is '4'."
+    },
+    {
+      "id": 11,
+      "question": "What is the behavior of the backslash in this text block?",
+      "code": "String s = \"\"\"\n    Java \\\n    Certification\"\"\";\nSystem.out.print(s);",
+      "options": [
+        "Java \\ Certification",
+        "Java \\n Certification",
+        "Java Certification",
+        "Java\n    Certification"
+      ],
+      "correctAnswer": 2,
+      "explanation": "In text blocks, the backslash at the end of a line acts as a line continuation character, preventing a newline."
+    },
+    {
+      "id": 12,
+      "question": "How many objects are created in the String pool for this code?",
+      "code": "String a = \"apple\";\nString b = \"apple\";\nString c = new String(\"apple\");",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The literal \"apple\" is placed in the pool once. 'c' creates a new object on the heap, but it refers to the same pool literal string."
+    },
+    {
+      "id": 13,
+      "question": "What is the output of this code?",
+      "code": "System.out.println(Math.ceil(-0.5));",
+      "options": [
+        "-1.0",
+        "0.0",
+        "-0.0",
+        "1.0"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Math.ceil returns the smallest integer value that is greater than or equal to the argument. -0.0 is equal to 0.0 but preserves the sign in some cases; ceiling of -0.5 is -0.0."
+    },
+    {
+      "id": 14,
+      "question": "Which of the following is true about StringBuilder?",
+      "code": "",
+      "options": [
+        "It is thread-safe.",
+        "It is immutable.",
+        "Its capacity is always equal to its length.",
+        "None of the above."
+      ],
+      "correctAnswer": 3,
+      "explanation": "StringBuilder is not thread-safe (StringBuffer is), it is mutable, and capacity is usually greater than or equal to length."
+    },
+    {
+      "id": 15,
+      "question": "What is the output?",
+      "code": "char c = 'A';\nSystem.out.println(c + 1);",
+      "options": [
+        "B",
+        "66",
+        "A1",
+        "Compilation error"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When performing math on char, it is promoted to an int. 'A' is 65, so 65 + 1 = 66."
+    },
+    {
+      "id": 16,
+      "question": "What does this code output?",
+      "code": "System.out.println(\" \".isBlank() + \" \" + \" \".isEmpty());",
+      "options": [
+        "true true",
+        "false false",
+        "true false",
+        "false true"
+      ],
+      "correctAnswer": 2,
+      "explanation": "isBlank() returns true if the string is empty or contains only white space. isEmpty() only returns true if length is 0."
+    },
+    {
+      "id": 17,
+      "question": "What is the result of the following?",
+      "code": "Boolean b1 = Boolean.valueOf(\"True\");\nBoolean b2 = Boolean.valueOf(\"tRue\");\nSystem.out.println(b1 == b2);",
+      "options": [
+        "true",
+        "false",
+        "Compilation error",
+        "Runtime error"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Boolean.valueOf is case-insensitive and returns the cached Boolean.TRUE or Boolean.FALSE objects."
+    },
+    {
+      "id": 18,
+      "question": "What is the output?",
+      "code": "String s = \"purdue\";\ns.toUpperCase();\ns.substring(0, 3);\nSystem.out.println(s);",
+      "options": [
+        "PURDUE",
+        "PUR",
+        "pur",
+        "purdue"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Strings are immutable. Methods like toUpperCase() and substring() return new strings; they do not modify the original."
+    },
+    {
+      "id": 19,
+      "question": "Which code snippet correctly converts a String to an int?",
+      "code": "",
+      "options": [
+        "int i = (int) \"123\";",
+        "int i = Integer.parseInt(\"123\");",
+        "int i = Integer.valueOf(\"123\");",
+        "Both 2 and 3"
+      ],
+      "correctAnswer": 3,
+      "explanation": "parseInt returns a primitive int. valueOf returns an Integer wrapper, which is then unboxed."
+    },
+    {
+      "id": 20,
+      "question": "What is printed by the following code?",
+      "code": "String text = \"\"\"\n    abc\n    \"\"\";\nSystem.out.println(text.length());",
+      "options": [
+        "3",
+        "4",
+        "7",
+        "8"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The text block includes the newline after 'abc' because the closing '\"\"\"' is on a new line. Thus: 'a', 'b', 'c', '\\n' = 4."
+    },
+    {
+      "id": 21,
+      "question": "What is the output of this code snippet?",
+      "code": "short x = 10;\nshort y = 20;\n// short z = x + y;",
+      "options": [
+        "The commented line would compile fine.",
+        "The commented line would cause a compilation error.",
+        "z would be 30.",
+        "z would be 0."
+      ],
+      "correctAnswer": 1,
+      "explanation": "Arithmetic operations on byte, short, or char always promote the operands to int. The result of (x + y) is an int, which cannot be assigned to a short without casting."
+    },
+    {
+      "id": 22,
+      "question": "What is the value of Math.pow(2, 3)?",
+      "code": "",
+      "options": [
+        "8",
+        "8.0",
+        "9",
+        "9.0"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Math.pow always returns a double."
+    },
+    {
+      "id": 23,
+      "question": "What does the stripIndent() method do in Text Blocks?",
+      "code": "",
+      "options": [
+        "Removes all spaces.",
+        "Removes incidental white space based on the position of the delimiters.",
+        "Removes leading and trailing white space from every line.",
+        "It is not a valid method."
+      ],
+      "correctAnswer": 1,
+      "explanation": "It removes incidental white space (common leading whitespace) from the text block content."
+    },
+    {
+      "id": 24,
+      "question": "What is the result of the following comparison?",
+      "code": "Long val1 = 100L;\nInteger val2 = 100;\n// System.out.println(val1 == val2);",
+      "options": [
+        "true",
+        "false",
+        "Compilation error",
+        "Runtime error"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The '==' operator cannot be used to compare different wrapper types (Long and Integer) because there is no inheritance relationship."
+    },
+    {
+      "id": 25,
+      "question": "What is the output of the following?",
+      "code": "StringBuilder sb = new StringBuilder(\"Java\");\nsb.append(10).append(true);\nSystem.out.println(sb);",
+      "options": [
+        "Java10true",
+        "Java 10 true",
+        "Java11",
+        "Compilation error"
+      ],
+      "correctAnswer": 0,
+      "explanation": "StringBuilder.append() is overloaded to accept primitives like int and boolean, converting them to strings."
+    },
+    {
+      "id": 26,
+      "question": "What is the output of this code?",
+      "code": "String s = \" \";\ns = s.concat(\"A\").trim();\nSystem.out.println(s.length());",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correctAnswer": 1,
+      "explanation": "\" \" concat \"A\" results in \" A\". trim() removes the leading space, leaving \"A\", which has length 1."
+    },
+    {
+      "id": 27,
+      "question": "Which statement about primitives is true?",
+      "code": "",
+      "options": [
+        "float f = 1.0;",
+        "long l = 1.0;",
+        "double d = 1.0f;",
+        "int i = 1.0;"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A float can be automatically widened to a double. 1.0 is a double literal and cannot be assigned to float, long, or int without casting."
+    },
+    {
+      "id": 28,
+      "question": "What is the result of Math.abs(-2147483648)?",
+      "code": "",
+      "options": [
+        "2147483648",
+        "2147483647",
+        "-2147483648",
+        "0"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Math.abs(Integer.MIN_VALUE) returns Integer.MIN_VALUE because the positive equivalent exceeds the maximum value for an int."
+    },
+    {
+      "id": 29,
+      "question": "What is the result of this operation?",
+      "code": "String s = \"abcde\";\nSystem.out.println(s.replace(\"a\", \"\").replace(\"b\", \"\"));",
+      "options": [
+        "cde",
+        "abcde",
+        "ab",
+        "Compilation error"
+      ],
+      "correctAnswer": 0,
+      "explanation": "String.replace() accepts CharSequence. Chaining the calls removes 'a' then 'b', resulting in 'cde'."
+    },
+    {
+      "id": 30,
+      "question": "How do you represent the binary value 5 in a Java int literal?",
+      "code": "",
+      "options": [
+        "int i = 0b101;",
+        "int i = b101;",
+        "int i = binary(101);",
+        "int i = 101b;"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Binary literals in Java start with the prefix '0b' or '0B'."
+    }
+  ]
+}

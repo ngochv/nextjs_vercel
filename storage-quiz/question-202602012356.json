@@ -1,0 +1,396 @@
+{
+  "id": "question-202602012356",
+  "timestamp": 1769964981512,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the output of the following code snippet?",
+      "code": "byte a = 10;\nbyte b = 20;\nbyte c = a + b;\nSystem.out.println(c);",
+      "options": [
+        "30",
+        "Compile-time error",
+        "ClassCastException",
+        "An arbitrary value due to overflow"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Arithmetic operations on byte, short, or char result in an int. The assignment back to byte 'c' requires an explicit cast."
+    },
+    {
+      "id": 2,
+      "question": "What does the following code print?",
+      "code": "Integer x = 128;\nInteger y = 128;\nSystem.out.println(x == y);",
+      "options": [
+        "true",
+        "false",
+        "null",
+        "Compile-time error"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Integer cache only covers values from -128 to 127. Values outside this range are created as new objects, so the '==' operator compares references and returns false."
+    },
+    {
+      "id": 3,
+      "question": "What is the result of Math.round(-1.5)?",
+      "code": "System.out.println(Math.round(-1.5));",
+      "options": [
+        "-1",
+        "-2",
+        "-1.0",
+        "-2.0"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Math.round adds 0.5 to the argument and takes the floor. -1.5 + 0.5 = -1.0. The floor of -1.0 is -1. Also, Math.round returns a long/int."
+    },
+    {
+      "id": 4,
+      "question": "What is the output of this String manipulation?",
+      "code": "String s = \"Java\";\ns.concat(\" SE 17\");\ns.replace(\"J\", \"K\");\nSystem.out.println(s);",
+      "options": [
+        "Java SE 17",
+        "Kava SE 17",
+        "Java",
+        "Kava"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Strings are immutable. Methods like concat() and replace() return new String objects; the original reference 's' remains unchanged."
+    },
+    {
+      "id": 5,
+      "question": "Evaluate the StringBuilder capacity after the following code:",
+      "code": "StringBuilder sb = new StringBuilder(\"ABC\");\nSystem.out.println(sb.capacity());",
+      "options": [
+        "3",
+        "16",
+        "19",
+        "22"
+      ],
+      "correctAnswer": 2,
+      "explanation": "When a StringBuilder is initialized with a String, its capacity is the String length plus the default 16 characters (3 + 16 = 19)."
+    },
+    {
+      "id": 6,
+      "question": "What is the value of this Text Block?",
+      "code": "String block = \"\"\"\n    line1\\\n    line2\n    \"\"\";",
+      "options": [
+        "    line1    line2",
+        "    line1line2",
+        "    line1\\n    line2",
+        "Compile-time error"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The backslash '\\' in a text block is a line-continuation character that suppresses the newline."
+    },
+    {
+      "id": 7,
+      "question": "Which primitive literal is invalid?",
+      "code": "",
+      "options": [
+        "int a = 0b101;",
+        "double b = 1_00.0_0;",
+        "long c = 100_L;",
+        "float d = 1.23_4f;"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Underscores cannot be placed adjacent to a suffix (L or F) or a decimal point."
+    },
+    {
+      "id": 8,
+      "question": "What happens when auto-unboxing a null Wrapper?",
+      "code": "Integer i = null;\nint n = i;",
+      "options": [
+        "n becomes 0",
+        "Compile-time error",
+        "NullPointerException",
+        "n becomes -1"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Unboxing a null reference results in a NullPointerException at runtime."
+    },
+    {
+      "id": 9,
+      "question": "What is the output of Math.floor(-1.1)?",
+      "code": "System.out.println(Math.floor(-1.1));",
+      "options": [
+        "-1.0",
+        "-2.0",
+        "-1",
+        "-2"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Math.floor returns the largest double value that is less than or equal to the argument. -2.0 is less than -1.1."
+    },
+    {
+      "id": 10,
+      "question": "What does the intern() method do?",
+      "code": "String s1 = new String(\"test\");\nString s2 = s1.intern();\nSystem.out.println(s1 == s2);",
+      "options": [
+        "true",
+        "false",
+        "Depends on JVM version",
+        "Throws an exception"
+      ],
+      "correctAnswer": 1,
+      "explanation": "s1 points to an object on the heap created with 'new'. s2 points to the constant in the pool. Therefore, s1 == s2 is false."
+    },
+    {
+      "id": 11,
+      "question": "What is the result of the following StringBuilder code?",
+      "code": "StringBuilder sb = new StringBuilder(\"0123456\");\nsb.delete(2, 4);\nsb.insert(2, \"XYZ\");\nSystem.out.println(sb.toString());",
+      "options": [
+        "01XYZ456",
+        "01XYZ23456",
+        "012XYZ456",
+        "01XYZ56"
+      ],
+      "correctAnswer": 0,
+      "explanation": "delete(2, 4) removes characters at index 2 and 3 ('2', '3'). insert(2, 'XYZ') puts 'XYZ' starting at index 2."
+    },
+    {
+      "id": 12,
+      "question": "In a Text Block, how is incidental whitespace determined?",
+      "code": "",
+      "options": [
+        "By the position of the first character in the block",
+        "By the position of the closing triple quotes",
+        "By the position of the leftmost non-whitespace character in any line",
+        "Both B and C are used to determine indentation"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The indentation is determined by the leftmost position of either a character in any line or the closing delimiter."
+    },
+    {
+      "id": 13,
+      "question": "What is the result of the following comparison?",
+      "code": "double d = 0.1 + 0.2;\nSystem.out.println(d == 0.3);",
+      "options": [
+        "true",
+        "false",
+        "Compile-time error",
+        "Runtime exception"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Floating point arithmetic (double) is imprecise. 0.1 + 0.2 results in approximately 0.30000000000000004."
+    },
+    {
+      "id": 14,
+      "question": "What is the output of the following?",
+      "code": "Boolean b1 = Boolean.valueOf(\"TRUE\");\nBoolean b2 = Boolean.valueOf(\"tRuE\");\nSystem.out.println(b1 == b2);",
+      "options": [
+        "true",
+        "false",
+        "null",
+        "Compile-time error"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Boolean.valueOf is case-insensitive and returns the cached Boolean.TRUE constant for both inputs."
+    },
+    {
+      "id": 15,
+      "question": "What is the return type of Math.pow(int, int)?",
+      "code": "",
+      "options": [
+        "int",
+        "long",
+        "float",
+        "double"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The Math.pow(double a, double b) method always returns a double."
+    },
+    {
+      "id": 16,
+      "question": "Which method returns true for a String containing only spaces?",
+      "code": "String s = \"   \";",
+      "options": [
+        "s.isEmpty()",
+        "s.isBlank()",
+        "Both",
+        "Neither"
+      ],
+      "correctAnswer": 1,
+      "explanation": "isEmpty() checks if length is 0. isBlank() checks if the string is empty or contains only white space characters."
+    },
+    {
+      "id": 17,
+      "question": "What is the output of this code?",
+      "code": "StringBuilder sb = new StringBuilder(\"Java\");\nsb.setLength(2);\nsb.append(\"va\");\nSystem.out.println(sb);",
+      "options": [
+        "Java",
+        "Jva",
+        "Java Java",
+        "Runtime Exception"
+      ],
+      "correctAnswer": 0,
+      "explanation": "setLength(2) truncates the sequence to 'Ja'. Appending 'va' makes it 'Java' again."
+    },
+    {
+      "id": 18,
+      "question": "What is the purpose of \\s in a Text Block?",
+      "code": "",
+      "options": [
+        "To insert a tab character",
+        "To prevent stripping of trailing whitespace",
+        "To represent a single space character",
+        "To start a new line"
+      ],
+      "correctAnswer": 1,
+      "explanation": "\\s can be used to ensure trailing whitespace is not removed by the compiler."
+    },
+    {
+      "id": 19,
+      "question": "What is the output?",
+      "code": "char c = 'A';\nSystem.out.println(c + 1);",
+      "options": [
+        "B",
+        "66",
+        "A1",
+        "Compile-time error"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The '+' operator promotes the char 'A' (65) to an int. The result is 66. To get 'B', you would need to cast: (char)(c + 1)."
+    },
+    {
+      "id": 20,
+      "question": "What is printed by this comparison?",
+      "code": "System.out.println(Double.NaN == Double.NaN);",
+      "options": [
+        "true",
+        "false",
+        "throws ArithmeticException",
+        "null"
+      ],
+      "correctAnswer": 1,
+      "explanation": "According to IEEE 754, NaN is not equal to anything, including itself."
+    },
+    {
+      "id": 21,
+      "question": "What is the output of Math.abs(Integer.MIN_VALUE)?",
+      "code": "",
+      "options": [
+        "2147483648",
+        "2147483647",
+        "-2147483648",
+        "throws OverflowException"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Integer.MIN_VALUE is -2147483648. Since the range of int is -2147483648 to 2147483647, the absolute value cannot be represented as a positive int and remains negative due to overflow."
+    },
+    {
+      "id": 22,
+      "question": "What is the difference between String.replace() and String.replaceAll()?",
+      "code": "",
+      "options": [
+        "replace() only replaces the first occurrence",
+        "replaceAll() uses regex, replace() does not",
+        "replace() only works with chars",
+        "There is no difference"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Both replace all occurrences. However, replaceAll() treats the target as a Regular Expression, whereas replace() treats it as a literal sequence."
+    },
+    {
+      "id": 23,
+      "question": "What is the result of the following?",
+      "code": "String s1 = \"abc\";\nString s2 = \"abc\";\nString s3 = new String(\"abc\");\nSystem.out.println(s1 == s2);\nSystem.out.println(s1 == s3);",
+      "options": [
+        "true, true",
+        "false, false",
+        "true, false",
+        "false, true"
+      ],
+      "correctAnswer": 2,
+      "explanation": "s1 and s2 point to the same object in the String Pool. s3 is a new object on the heap."
+    },
+    {
+      "id": 24,
+      "question": "Which of these is a valid Text Block?",
+      "code": "",
+      "options": [
+        "String s = \"\"\"Hello\"\"\";",
+        "String s = \"\"\" Hello \n \"\"\";",
+        "String s = \"\"\"\n Hello \"\"\";",
+        "String s = \"\"\" Hello\n \"\"\";"
+      ],
+      "correctAnswer": 2,
+      "explanation": "A text block must have the opening triple quotes followed by a line terminator."
+    },
+    {
+      "id": 25,
+      "question": "What happens in the following code?",
+      "code": "Long val1 = 100L;\nLong val2 = 100L;\nSystem.out.println(val1 == val2);",
+      "options": [
+        "true",
+        "false",
+        "Compile-time error",
+        "Runtime Exception"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Similar to Integer, Long also has a cache for values between -128 and 127."
+    },
+    {
+      "id": 26,
+      "question": "What is the value of result?",
+      "code": "double result = Math.ceil(-0.5);",
+      "options": [
+        "-1.0",
+        "0.0",
+        "-0.0",
+        "1.0"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Math.ceil returns the smallest double that is greater than or equal to -0.5, which is -0.0 (mathematically 0, but preserving the sign bit in some implementations/contexts)."
+    },
+    {
+      "id": 27,
+      "question": "What is the output of the following?",
+      "code": "String s = \"123\";\ns.concat(\"456\");\nSystem.out.println(s.length());",
+      "options": [
+        "3",
+        "6",
+        "0",
+        "Compile-time error"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Strings are immutable. The result of concat() is discarded because it is not assigned to a variable."
+    },
+    {
+      "id": 28,
+      "question": "What happens here?",
+      "code": "StringBuilder sb = new StringBuilder(\"Java\");\nString s = \"Java\";\nSystem.out.println(s.equals(sb));",
+      "options": [
+        "true",
+        "false",
+        "Compile-time error",
+        "ClassCastException"
+      ],
+      "correctAnswer": 1,
+      "explanation": "String.equals() checks if the object is an instance of String. Since StringBuilder is not a String, it returns false."
+    },
+    {
+      "id": 29,
+      "question": "What is the output of the following snippet?",
+      "code": "System.out.println(\"Result: \" + 1 + 2);",
+      "options": [
+        "Result: 3",
+        "Result: 12",
+        "Compile-time error",
+        "Result: 1+2"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The '+' operator is evaluated from left to right. \"Result: \" + 1 creates \"Result: 1\", then \"Result: 1\" + 2 creates \"Result: 12\"."
+    },
+    {
+      "id": 30,
+      "question": "Which of the following is true regarding Wrapper classes?",
+      "code": "",
+      "options": [
+        "They are all mutable",
+        "They are all final",
+        "They all extend the Number class",
+        "They cannot be used in Switch statements"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All Wrapper classes in java.lang (Integer, Long, etc.) are final and immutable. Boolean and Character do not extend Number."
+    }
+  ]
+}
